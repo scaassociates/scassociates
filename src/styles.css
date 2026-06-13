@@ -143,13 +143,10 @@ nav a:hover {
 .hero {
   position: relative;
   isolation: isolate;
-  perspective: 1600px;
   min-height: 100svh;
   width: 100%;
   padding: 112px clamp(18px, 5vw, 72px) 56px;
   overflow: hidden;
-  --hero-x: 62%;
-  --hero-y: 34%;
 }
 
 .hero::before {
@@ -158,26 +155,7 @@ nav a:hover {
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.93) 54%, rgba(244, 247, 251, 0.86) 100%),
-    radial-gradient(circle at var(--hero-x) var(--hero-y), rgba(213, 173, 98, 0.16), transparent 32%);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle at var(--hero-x) var(--hero-y), rgba(63, 109, 154, 0.18), transparent 18%),
-    radial-gradient(circle at calc(var(--hero-x) + 8%) calc(var(--hero-y) + 12%), rgba(185, 144, 69, 0.14), transparent 22%);
-  opacity: 0.42;
-  pointer-events: none;
-  transition: opacity 220ms ease;
-}
-
-.hero:hover::after,
-.hero:focus-within::after {
-  opacity: 0.72;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.93) 54%, rgba(244, 247, 251, 0.86) 100%);
 }
 
 .hero-shell {
@@ -200,11 +178,6 @@ nav a:hover {
   padding-top: 12px;
 }
 
-.hero-copy > * {
-  transform: translate3d(0, 0, 0);
-  transition: opacity 280ms ease, filter 280ms ease;
-}
-
 .grid-lines {
   position: absolute;
   inset: 0 calc(50% - 50vw);
@@ -214,7 +187,6 @@ nav a:hover {
     linear-gradient(90deg, rgba(12, 31, 56, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, black, transparent 82%);
-  animation: gridMove 28s linear infinite;
 }
 
 .particles span {
@@ -226,8 +198,6 @@ nav a:hover {
   border-radius: 999px;
   background: rgba(185, 144, 69, 0.42);
   box-shadow: 0 0 14px rgba(185, 144, 69, 0.22);
-  animation: floatParticle 9s ease-in-out infinite;
-  animation-delay: calc(var(--i) * -0.45s);
 }
 
 .particles {
@@ -256,7 +226,6 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.72);
   font-size: 12px;
   font-weight: 800;
-  animation: softPulse 3.8s ease-in-out infinite;
 }
 
 .hero-topline {
@@ -298,11 +267,6 @@ nav a:hover {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: textShine 10s ease-in-out infinite;
-}
-
-.hero-accent-soft {
-  animation-duration: 12s;
 }
 
 .hero p,
@@ -344,9 +308,6 @@ nav a:hover {
   margin-top: 4px;
   border-top: 1px solid rgba(12, 31, 56, 0.1);
   padding-top: 22px;
-  transform: translate3d(0, 0, 0);
-  transition: box-shadow 320ms ease, border-color 320ms ease;
-  will-change: transform;
 }
 
 .hero-service-tabs {
@@ -371,11 +332,6 @@ nav a:hover {
   font-weight: 800;
   line-height: 1.25;
   overflow: hidden;
-  transition:
-    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 220ms ease,
-    background 220ms ease,
-    box-shadow 220ms ease;
 }
 
 .hero-service-tabs button::after {
@@ -388,13 +344,11 @@ nav a:hover {
   background: linear-gradient(90deg, var(--gold), rgba(63, 109, 154, 0.74));
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-service-tabs button:hover,
 .hero-service-tabs button:focus-visible,
 .hero-service-tabs button.is-active {
-  transform: translateY(-3px);
   border-color: rgba(185, 144, 69, 0.5);
   background: #ffffff;
   box-shadow: 0 12px 28px rgba(12, 31, 56, 0.1);
@@ -424,10 +378,6 @@ nav a:hover {
   padding: 18px 20px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 18px 45px rgba(12, 31, 56, 0.1);
-  animation: servicePreviewIn 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  transform: translate3d(0, 0, 0);
-  transition: box-shadow 320ms ease, border-color 320ms ease, background 320ms ease;
-  will-change: transform;
 }
 
 .hero-service-preview strong {
@@ -464,9 +414,6 @@ nav a:hover {
   gap: 12px;
   max-width: 720px;
   margin-top: 18px;
-  transform: translate3d(0, 0, 0);
-  transition: box-shadow 280ms ease;
-  will-change: transform;
 }
 
 .hero-proof-strip span {
@@ -477,10 +424,6 @@ nav a:hover {
   color: var(--muted);
   background: rgba(255, 255, 255, 0.74);
   box-shadow: 0 12px 30px rgba(12, 31, 56, 0.08);
-}
-
-.hero-proof-strip span {
-  transition: box-shadow 280ms ease, border-color 280ms ease;
 }
 
 .hero-proof-strip strong {
@@ -548,62 +491,6 @@ nav a:hover {
   padding: 12px;
   overflow: hidden;
   isolation: isolate;
-  transform-style: preserve-3d;
-  transform: translate3d(calc((var(--hero-x) - 50%) * 0.018), calc((var(--hero-y) - 50%) * 0.012), 0);
-  transition: border-color 180ms ease, box-shadow 220ms ease, filter 220ms ease;
-}
-
-.hero-founder::before {
-  content: "";
-  position: absolute;
-  inset: 12px 12px 72px;
-  border-radius: 2px;
-  background:
-    radial-gradient(circle at 50% 18%, rgba(185, 144, 69, 0.18), transparent 54%),
-    radial-gradient(circle at 18% 82%, rgba(63, 109, 154, 0.16), transparent 48%);
-  opacity: 0.68;
-  filter: blur(8px);
-  pointer-events: none;
-  animation: founderGlow 8.5s ease-in-out infinite;
-}
-
-.hero-founder::after {
-  content: "";
-  position: absolute;
-  inset: -10% -12%;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    120deg,
-    transparent 34%,
-    rgba(255, 255, 255, 0.08) 44%,
-    rgba(255, 255, 255, 0.58) 50%,
-    rgba(255, 255, 255, 0.08) 56%,
-    transparent 66%
-  );
-  opacity: 0;
-  transform: translateX(-36%) rotate(10deg);
-  mix-blend-mode: screen;
-}
-
-.hero-founder:hover {
-  border-color: rgba(185, 144, 69, 0.42);
-  box-shadow:
-    0 24px 58px rgba(12, 31, 56, 0.16),
-    0 0 0 1px rgba(185, 144, 69, 0.08);
-  filter: saturate(1.02);
-  transform: translate3d(calc((var(--hero-x) - 50%) * 0.028), calc((var(--hero-y) - 50%) * 0.02), 0)
-    translateY(-8px) rotateX(1.5deg) rotateY(-1.5deg);
-}
-
-.hero-founder:hover::before {
-  opacity: 0.92;
-  animation-duration: 5.2s;
-}
-
-.hero-founder:hover::after {
-  opacity: 1;
-  animation: heroSheen 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero-founder img,
@@ -621,78 +508,6 @@ nav a:hover {
   object-position: center;
   position: relative;
   z-index: 1;
-  animation: founderFloat 7.5s ease-in-out infinite;
-  will-change: transform;
-  transition: filter 220ms ease;
-}
-
-.hero-founder:hover img {
-  filter: saturate(1.06) contrast(1.03) brightness(1.02);
-  animation-duration: 4.8s;
-}
-
-.hero:hover .hero-topline,
-.hero:focus-within .hero-topline {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.02), calc((var(--hero-y) - 50%) * -0.014), 0);
-}
-
-.hero:hover .hero-title,
-.hero:focus-within .hero-title {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.03), calc((var(--hero-y) - 50%) * -0.02), 0);
-}
-
-.hero:hover .hero-summary,
-.hero:focus-within .hero-summary {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.022), calc((var(--hero-y) - 50%) * -0.014), 0);
-}
-
-.hero:hover .hero-actions,
-.hero:focus-within .hero-actions {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.018), calc((var(--hero-y) - 50%) * -0.012), 0);
-}
-
-.hero:hover .hero-proof-strip,
-.hero:focus-within .hero-proof-strip {
-  transform: translate3d(calc((var(--hero-x) - 50%) * 0.016), calc((var(--hero-y) - 50%) * 0.012), 0)
-    translateY(-4px);
-}
-
-.hero:hover .hero-service-console,
-.hero:focus-within .hero-service-console {
-  transform: translate3d(calc((var(--hero-x) - 50%) * 0.012), calc((var(--hero-y) - 50%) * 0.02), 0)
-    translateY(-3px);
-  border-color: rgba(12, 31, 56, 0.16);
-}
-
-.hero:hover .hero-service-preview,
-.hero:focus-within .hero-service-preview {
-  transform: translate3d(calc((var(--hero-x) - 50%) * 0.014), calc((var(--hero-y) - 50%) * 0.01), 0)
-    translateY(-4px);
-  box-shadow: 0 22px 54px rgba(12, 31, 56, 0.14);
-}
-
-.hero:hover .hero-service-tabs button:nth-child(1),
-.hero:focus-within .hero-service-tabs button:nth-child(1) {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.01), calc((var(--hero-y) - 50%) * -0.01), 0)
-    translateY(-2px);
-}
-
-.hero:hover .hero-service-tabs button:nth-child(2),
-.hero:focus-within .hero-service-tabs button:nth-child(2) {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.015), calc((var(--hero-y) - 50%) * -0.01), 0)
-    translateY(-3px);
-}
-
-.hero:hover .hero-service-tabs button:nth-child(3),
-.hero:focus-within .hero-service-tabs button:nth-child(3) {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.02), calc((var(--hero-y) - 50%) * -0.011), 0)
-    translateY(-4px);
-}
-
-.hero:hover .hero-service-tabs button:nth-child(4),
-.hero:focus-within .hero-service-tabs button:nth-child(4) {
-  transform: translate3d(calc((var(--hero-x) - 50%) * -0.024), calc((var(--hero-y) - 50%) * -0.012), 0)
-    translateY(-5px);
 }
 
 .hero-founder figcaption,
@@ -1116,149 +931,6 @@ nav a:hover {
   transform: translateY(0);
 }
 
-.hero-visible {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: heroRise 560ms ease-out both;
-}
-
-.hero-topline.hero-visible {
-  animation-delay: 60ms;
-}
-
-.hero-title.hero-visible {
-  animation-delay: 120ms;
-}
-
-.hero-summary.hero-visible,
-.hero-actions.hero-visible {
-  animation-delay: 180ms;
-}
-
-.hero-founder.hero-visible {
-  animation-delay: 240ms;
-}
-
-.hero-service-console.hero-visible {
-  animation-delay: 300ms;
-}
-
-@keyframes heroRise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes founderFloat {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate3d(0, -8px, 0) scale(1.01);
-  }
-}
-
-@keyframes founderGlow {
-  0%,
-  100% {
-    opacity: 0.58;
-    transform: scale(0.99);
-  }
-
-  50% {
-    opacity: 0.86;
-    transform: scale(1.02);
-  }
-}
-
-@keyframes heroSheen {
-  0% {
-    opacity: 0;
-    transform: translateX(-42%) rotate(10deg);
-  }
-
-  45% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(42%) rotate(10deg);
-  }
-}
-
-@keyframes servicePreviewIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes softPulse {
-  0%,
-  100% {
-    opacity: 0.74;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-2px);
-  }
-}
-
-@keyframes textShine {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes gridMove {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 58px 58px;
-  }
-}
-
-@keyframes floatParticle {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 0.2;
-  }
-  50% {
-    transform: translate3d(16px, -34px, 0);
-    opacity: 0.95;
-  }
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @media (max-height: 900px) and (min-width: 1121px) {
   .hero {
     padding-top: 96px;
@@ -1292,24 +964,6 @@ nav a:hover {
     transform: none;
     transition: none;
   }
-
-  .hero-visible {
-    opacity: 1;
-    transform: none;
-    animation: none !important;
-  }
-
-  .hero *,
-  .hero *::before,
-  .hero *::after {
-    transition: none !important;
-  }
-
-  .hero-founder::before,
-  .hero-founder::after,
-  .hero-founder img {
-    animation: none !important;
-  }
 }
 
 @media (max-width: 1120px) {
@@ -1332,8 +986,7 @@ nav a:hover {
 
   .hero::before {
     background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 56%, rgba(255, 255, 255, 0.62) 100%),
-      radial-gradient(circle at var(--hero-x) var(--hero-y), rgba(213, 173, 98, 0.16), transparent 30%);
+      linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 56%, rgba(255, 255, 255, 0.62) 100%);
   }
 
   .hero-title {
@@ -1455,7 +1108,6 @@ nav a:hover {
     justify-self: start;
     width: min(100%, 360px);
     padding: 8px;
-    transform: none;
   }
 
   .hero-founder img {
@@ -1491,7 +1143,7 @@ nav a:hover {
   .hero-service-tabs button:hover,
   .hero-service-tabs button:focus-visible,
   .hero-service-tabs button.is-active {
-    transform: translateY(-2px);
+    transform: none;
   }
 
   .section-heading h2,
