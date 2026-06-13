@@ -28,7 +28,7 @@ export default function LazySection({ children, id, minHeight = 420 }) {
             reveal()
           }
         },
-        { rootMargin: '320px 0px 240px 0px', threshold: 0.01 },
+        { rootMargin: '0px', threshold: 0.01 },
       )
 
       observer.observe(node)
